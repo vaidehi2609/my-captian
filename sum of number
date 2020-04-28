@@ -1,0 +1,20 @@
+#include <stdio.h>
+int sum(int n);
+int main()
+{
+    int i,result,n;
+    printf("enter any number :");
+    scanf("%d",&i);
+    result =sum(i);
+    printf("the sum of the digits of the entered number is:%d",result);
+}
+int sum(int n)
+{
+    if(n==0)
+    {
+        return 0;
+    } else
+    {
+        return( n%10 + sum(n/10));
+    }
+}
