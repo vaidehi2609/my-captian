@@ -1,0 +1,27 @@
+package project.pkg1;
+
+import java.util.*; /**
+ *
+ * @author Admin
+ */
+public class Project1 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter number of minutes:");
+        int minutes=sc.nextInt();
+        int years=minutes/525600;
+        int remainingMinutes=minutes%525600;
+        int day=remainingMinutes/1440;
+        if(minutes%525600==0)
+        System.out.println(minutes+" minutes is "+years+" years.");  
+          else
+          
+        System.out.println(minutes+" minutes is "+years+" years and "+day+" days.");
+    }
+    
+}
