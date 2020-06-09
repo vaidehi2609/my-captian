@@ -1,0 +1,5 @@
+import math
+r=input('Input the radius of circle:')
+r=float(r)
+area=math.pi*r*r
+print('the area of circle with radius',r,'is:',area)
