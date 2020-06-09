@@ -3,3 +3,9 @@ r=input('Input the radius of circle:')
 r=float(r)
 area=math.pi*r*r
 print('the area of circle with radius',r,'is:',area)
+
+
+
+filename=input('enter a file name:')
+dict={".py":"python"}
+print('the extension of file is',dict[".py"])
