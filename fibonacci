@@ -2,12 +2,11 @@ a=0
 b=1
 n=int(input('enter a number:'))
 print('fibonacci series till',n,'numbers')
-print(a)
-print(b)
+print(a,b,end=" ")
 i=0
 while i<n:
     c=a+b
-    print(c)
+    print(c,end=" ")
     a=b
     b=c
     i=i+1
