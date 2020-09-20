@@ -1,0 +1,117 @@
+
+package bankdetails;
+import java.util.*;
+
+public class BankDetails {
+    String name;
+    long accNo,ifsc;
+    double amount;
+     double p,t,r,interest;
+    
+    static Scanner sc= new Scanner(System.in);
+    void createAccount(){
+        String add;
+    long contact;
+        System.out.println("Enter your full name:");
+        name=sc.nextLine();
+        System.out.println("Account Number:");
+        accNo=sc.nextLong();
+        System.out.println("Contact Number:");
+        contact=sc.nextLong();
+        System.out.println("Current Address:");
+        add=sc.nextLine();
+        System.out.println("Entered Details:");
+        System.out.println("Name:"+name);
+        System.out.println("Account Number"+accNo);
+        System.out.println("Contact Number"+contact);
+        System.out.println("Current Address:"+add);
+    }
+    void deposit(){
+        System.out.println("Account Name:");
+        name=sc.nextLine();
+        System.out.println("Account Number:");
+        accNo=sc.nextLong();
+        System.out.println("IFSC code:");
+        ifsc=sc.nextLong();
+        System.out.println("Amount to be deposited:");
+        amount=sc.nextDouble();
+        System.out.println(amount+"amount was deposited");
+    }
+    void withdraw(){
+        System.out.println("Account Name:");
+        name=sc.nextLine();
+        System.out.println("Account Number:");
+        accNo=sc.nextLong();
+        System.out.println("IFSC code:");
+        ifsc=sc.nextLong();
+        System.out.println("Amount to be withdrawn:");
+        amount=sc.nextDouble();
+        System.out.println(amount+"amount was withdrawn");
+    }
+    void computeinterest(){
+        
+        System.out.println("Principle Amount:");
+        p=sc.nextDouble();
+        System.out.println("Rate Of Interest:");
+        r=sc.nextDouble();
+        System.out.println("Tenure:");
+        t=sc.nextDouble();
+        interest=(p*r*t)/100;
+        System.out.println("Interest:"+interest);
+        
+    }
+    void displayBalance(){
+        double initialBalance,remainingBalance;
+        int n;
+        System.out.println("Initial Balance:");
+        initialBalance=sc.nextDouble();
+        System.out.println("Initial Balance:");
+        n=sc.nextInt();
+        remainingBalance=initialBalance*Math.pow((1+r),n)-p*((Math.pow((1+r),n)-1)/r);
+        System.out.println("Remaining Balance:"+remainingBalance);
+       
+        
+    }
+
+  
+    public static void main(String[] args) {
+        BankDetails obj= new BankDetails();
+        int a=0;
+        while(a!=6){
+        System.out.println("Welcome to XYZ bank");
+        System.out.println("Please choose from the following options\n 1.Create Account\n 2.Deposit Money\n 3.Withdraw Money\n 4.Compute Interest\n "
+                +"5.Display Balance\n 6.Exit");
+        System.out.println("Enter your option number:");
+         a = sc.nextInt();
+        switch(a){
+            case 1:
+                System.out.println("Account Details");
+                obj.createAccount();
+                break;
+            case 2:
+                System.out.println("Deposit Money");
+                obj.deposit();
+                break;    
+            case 3:
+                System.out.println("Withdraw Money");
+                obj.withdraw();
+                break;  
+            case 4:
+                System.out.println("Compute Interest");
+                obj.computeinterest();
+                break;    
+            case 5:
+                System.out.println("Display Balance");
+                obj.displayBalance();
+                break;    
+            case 6:
+                System.out.println("Have a nice day");
+                System.exit(0);
+            default:
+                System.out.println("Invalid Choice");
+                
+        }
+        }
+    }
+    
+}
